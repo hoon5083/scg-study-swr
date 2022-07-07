@@ -1,10 +1,7 @@
-import useApi from "hooks/useApi";
-import { NextComponentType, NextPage } from "next";
 import { User } from "types/api";
 import DetailAxios from "./DetailAxios";
 
-const ProfileAxios: NextComponentType = () => {
-	const data = useApi<User>("users/2");
+function ProfileAxios({ data }: { data: User | null }) {
 	return (
 		<div className="overflow-hidden bg-white shadow-xl rounded-3xl">
 			<div className="p-6 bg-blue-500 pb-14">
@@ -26,10 +23,10 @@ const ProfileAxios: NextComponentType = () => {
 					<span className="text-lg font-medium">{data?.first_name}</span>
 					<span className="text-sm text-gray-500">{data?.last_name}</span>
 				</div>
-				<DetailAxios />
+				<DetailAxios data={data} />
 			</div>
 		</div>
 	);
-};
+}
 
 export default ProfileAxios;

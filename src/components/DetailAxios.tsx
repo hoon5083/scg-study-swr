@@ -1,9 +1,6 @@
-import useApi from "hooks/useApi";
-import { NextComponentType, NextPage } from "next";
 import { User } from "types/api";
 
-const DetailAxios: NextComponentType = () => {
-	const data = useApi<User>("users/2");
+function DetailAxios({ data }: { data: User | null }) {
 	return (
 		<div className="p-6 my-4 bg-white border-2 border-black shadow-xl rounded-3xl">
 			<div className="flex flex-col">
@@ -34,6 +31,6 @@ const DetailAxios: NextComponentType = () => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default DetailAxios;
