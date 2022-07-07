@@ -6,7 +6,7 @@ import fetcher from "utils/fetcher";
 import Detail from "./Detail";
 import DetailAxios from "./DetailAxios";
 
-const ProfileAxios: NextComponentType = () => {
+function ProfileAxios() {
 	const data = useApi<User>("users/2");
 	return (
 		<div className="overflow-hidden bg-white shadow-xl rounded-3xl">
@@ -33,6 +33,6 @@ const ProfileAxios: NextComponentType = () => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default ProfileAxios;

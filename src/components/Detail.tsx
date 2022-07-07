@@ -3,7 +3,7 @@ import useSwr from "swr";
 import { User } from "types/api";
 import fetcher from "utils/fetcher";
 
-const Detail: NextComponentType = () => {
+function Detail() {
 	const { data, error } = useSwr<User>(
 		"https://reqres.in/api/users/2",
 		fetcher
@@ -39,6 +39,6 @@ const Detail: NextComponentType = () => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default Detail;

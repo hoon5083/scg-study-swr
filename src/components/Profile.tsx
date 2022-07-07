@@ -5,7 +5,7 @@ import fetcher from "utils/fetcher";
 import Detail from "./Detail";
 import DetailAxios from "./DetailAxios";
 
-const Profile: NextComponentType = () => {
+function Profile() {
 	const { data, error } = useSwr<User>(
 		"https://reqres.in/api/users/2",
 		fetcher
@@ -35,6 +35,6 @@ const Profile: NextComponentType = () => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default Profile;

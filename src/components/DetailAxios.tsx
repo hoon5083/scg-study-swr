@@ -4,7 +4,7 @@ import useSwr from "swr";
 import { User } from "types/api";
 import fetcher from "utils/fetcher";
 
-const DetailAxios: NextComponentType = () => {
+function DetailAxios() {
 	const data = useApi<User>("users/2");
 	return (
 		<div className="p-6 my-4 bg-white border-2 border-black shadow-xl rounded-3xl">
@@ -36,6 +36,6 @@ const DetailAxios: NextComponentType = () => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default DetailAxios;
