@@ -1,12 +1,14 @@
-import { useUser } from "hooks/useUser";
 import { NextComponentType, NextPage } from "next";
 import useSwr from "swr";
 import { User } from "types/api";
 import fetcher from "utils/fetcher";
 import Detail from "./Detail";
 
-function Profile({ id }: { id: number }) {
-	const { data } = useUser(id);
+function Profile() {
+	const { data, error } = useSwr<User>(
+		"https://reqres.in/api/users/2",
+		fetcher
+	);
 	return (
 		<div className="overflow-hidden bg-white shadow-xl rounded-3xl">
 			<div className="p-6 bg-blue-500 pb-14">
@@ -28,7 +30,7 @@ function Profile({ id }: { id: number }) {
 					<span className="text-lg font-medium">{data?.first_name}</span>
 					<span className="text-sm text-gray-500">{data?.last_name}</span>
 				</div>
-				<Detail id={id} />
+				<Detail />
 			</div>
 		</div>
 	);
