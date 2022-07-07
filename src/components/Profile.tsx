@@ -4,9 +4,8 @@ import { User } from "types/api";
 import fetcher from "utils/fetcher";
 import Detail from "./Detail";
 
-function Profile() {
-	//데이터 가져오기
-	const { data } = useUser(2);
+function Profile({ id }: { id: number }) {
+	const { data } = useUser(id);
 	return (
 		<div className="overflow-hidden bg-white shadow-xl rounded-3xl">
 			<div className="p-6 bg-blue-500 pb-14">
@@ -28,7 +27,7 @@ function Profile() {
 					<span className="text-lg font-medium">{data?.first_name}</span>
 					<span className="text-sm text-gray-500">{data?.last_name}</span>
 				</div>
-				<Detail />
+				<Detail id={id} />
 			</div>
 		</div>
 	);

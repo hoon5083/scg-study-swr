@@ -3,9 +3,8 @@ import useSWR from "swr";
 import { User } from "types/api";
 import fetcher from "utils/fetcher";
 
-function Detail() {
-	//데이터 가져오기
-	const { data } = useUser(2);
+function Detail({ id }: { id: number }) {
+	const { data } = useUser(id);
 
 	return (
 		<div className="p-6 my-4 bg-white border-2 border-black shadow-xl rounded-3xl">
