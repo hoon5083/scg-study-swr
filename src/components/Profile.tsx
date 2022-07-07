@@ -13,7 +13,7 @@ const Profile: NextComponentType = () => {
 	return (
 		<div className="overflow-hidden bg-white shadow-xl rounded-3xl">
 			<div className="p-6 bg-blue-500 pb-14">
-				<span className="text-2xl text-white">Profile</span>
+				<span className="text-2xl text-white">Profil</span>
 			</div>
 			<div className="relative p-6 bg-white rounded-3xl -top-5">
 				<div className="relative flex items-end justify-between -top-16">
