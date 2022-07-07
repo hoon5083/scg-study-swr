@@ -1,8 +1,14 @@
+import useSWR from "swr";
+import { User } from "types/api";
+import fetcher from "utils/fetcher";
 import Detail from "./Detail";
 
 function Profile() {
 	//데이터 가져오기
-
+	const { data, error } = useSWR<User>(
+		"https://reqres.in/api/users/2",
+		fetcher
+	);
 	return (
 		<div className="overflow-hidden bg-white shadow-xl rounded-3xl">
 			<div className="p-6 bg-blue-500 pb-14">
