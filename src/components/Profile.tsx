@@ -3,7 +3,6 @@ import useSwr from "swr";
 import { User } from "types/api";
 import fetcher from "utils/fetcher";
 import Detail from "./Detail";
-import DetailAxios from "./DetailAxios";
 
 function Profile() {
 	const { data, error } = useSwr<User>(
