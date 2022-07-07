@@ -1,9 +1,6 @@
 import useApi from "hooks/useApi";
 import { NextComponentType, NextPage } from "next";
-import useSwr from "swr";
 import { User } from "types/api";
-import fetcher from "utils/fetcher";
-import Detail from "./Detail";
 import DetailAxios from "./DetailAxios";
 
 const ProfileAxios: NextComponentType = () => {
