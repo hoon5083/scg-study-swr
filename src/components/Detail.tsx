@@ -1,13 +1,9 @@
-import { NextComponentType, NextPage } from "next";
 import useSwr from "swr";
 import { User } from "types/api";
 import fetcher from "utils/fetcher";
 
 function Detail() {
-	const { data, error } = useSwr<User>(
-		"https://reqres.in/api/users/2",
-		fetcher
-	);
+	//데이터 가져오기
 
 	return (
 		<div className="p-6 my-4 bg-white border-2 border-black shadow-xl rounded-3xl">
